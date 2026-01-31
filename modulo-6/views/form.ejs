@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <title>CSRF Demo</title>
+    </head>
+    <body>
+        <h1>Form com CSRF</h1>
+
+        <form method="POST" action="/form">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <label>
+            Mensagem:
+            <input name="mensagem" />
+            </label>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <p><a href="/">Voltar</a></p>
+    </body>
+</html>
