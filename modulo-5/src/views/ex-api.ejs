@@ -1,0 +1,10 @@
+<div class="card">
+    <h1><%= title %></h1>
+    <p>Exemplo de renderização de dados vindos de uma API externa (aqui usamos um mock local).</p>
+
+    <ul>
+        <% posts.forEach(p => { %>
+        <li><strong><%= p.title %></strong> — <%= p.body %></li>
+        <% }) %>
+    </ul>
+</div>

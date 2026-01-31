@@ -1,0 +1,24 @@
+<div class="card">
+    <h1>Cadastrar usuário</h1>
+
+    <% if (errors && errors.length) { %>
+        <div class="error">
+            <strong>Corrija:</strong>
+            <ul>
+                <% errors.forEach(e => { %><li><%= e %></li><% }) %>
+            </ul>
+        </div>
+    <% } %>
+
+    <form action="/usuarios" method="POST">
+        <p>
+            <label>Nome</label><br/>
+            <input type="text" name="nome" placeholder="Nome" required />
+        </p>
+        <p>
+            <label>Email</label><br/>
+            <input type="email" name="email" placeholder="Email" required />
+        </p>
+        <button type="submit">Enviar</button>
+    </form>
+</div>

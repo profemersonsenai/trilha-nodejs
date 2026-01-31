@@ -1,0 +1,25 @@
+<div class="card">
+    <h1>Lista de Usuários</h1>
+
+    <% if (typeof error !== 'undefined') { %>
+        <div class="error"><strong>Erro:</strong> <%= error %></div>
+    <% } %>
+
+    <p><a href="/usuarios/novo">+ Cadastrar novo</a></p>
+
+    <table>
+        <thead>
+            <tr><th>ID</th><th>Nome</th><th>Email</th><th>Criado em</th></tr>
+        </thead>
+        <tbody>
+            <% usuarios.forEach(u => { %>
+            <tr>
+                <td><%= u.id %></td>
+                <td><%= u.nome %></td>
+                <td><%= u.email %></td>
+                <td><%= u.created_at %></td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>

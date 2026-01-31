@@ -1,0 +1,28 @@
+{
+  "name": "modulo5-ssr-templating",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "description": "Módulo 5 — SSR, templating (EJS/Pug/Handlebars) e formulários com Express + MySQL (UniSenai).",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down -v",
+    "ex:ejs": "node src/examples/01-ssr-ejs-basico.js",
+    "ex:pug": "node src/examples/02-ssr-pug-basico.js",
+    "ex:hbs": "node src/examples/03-ssr-hbs-basico.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-handlebars": "^7.1.2",
+    "mysql2": "^3.11.0",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
