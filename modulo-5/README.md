@@ -12,15 +12,7 @@ Este projeto reúne práticas baseadas no PDF do **Módulo 5: Server-Side Render
 
 ## Pré-requisitos
 - Node.js 18+ (recomendado 20+)
-- (Opcional) Docker + Docker Compose (para subir MySQL)
-
-## Como rodar (recomendado — com Docker)
-```bash
-npm install
-cp .env.example .env
-npm run db:up
-npm run dev
-```
+- MySQL
 
 Abra:
 - http://localhost:3000
@@ -36,8 +28,6 @@ Abra:
 - `/usuarios` Lista usuários do MySQL (SSR)
 - `/usuarios/novo` Formulário para cadastrar
 - `/ex-api` Renderiza dados de uma “API externa” (mock) no template
-
-> Observação: o PDF menciona **body-parser**. Neste projeto usamos `express.urlencoded()` e `express.json()` (o Express já possui isso embutido).
 
 ## Scripts de exemplos rápidos (templating)
 - `npm run ex:ejs`
@@ -63,5 +53,4 @@ src/
     ex-api.ejs
 public/css/style.css
 sql/init.sql
-docker-compose.yml
 ```
