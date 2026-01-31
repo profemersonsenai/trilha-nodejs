@@ -53,5 +53,4 @@ src/
     ex-api.ejs
 public/css/style.css
 sql/init.sql
-docker-compose.yml
 ```
