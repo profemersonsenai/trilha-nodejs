@@ -1,0 +1,177 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Usuários - Módulo 8",
+        "version": "1.0.0",
+        "description": "CRUD com Node.js + Express + MySQL, validação Joi, paginação/filtro e Swagger."
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000"
+        }
+    ],
+    "paths": {
+        "/api/usuarios": {
+        "get": {
+            "summary": "Listar usuários (paginação e filtro)",
+            "parameters": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "example": 1
+                    }
+                },
+                {
+                    "name": "limit",
+                    "in": "query",
+                    "schema": {
+                        "type": "integer",
+                        "example": 10
+                    }
+                },
+                {
+                    "name": "nome",
+                    "in": "query",
+                    "schema": {
+                        "type": "string",
+                        "example": "adm"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        },
+        "post": {
+            "summary": "Criar usuário",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "required": [
+                                "nome",
+                                "email",
+                                "senha"
+                            ],
+                            "properties": {
+                                "nome": {
+                                    "type": "string",
+                                    "example": "João"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "example": "joao@demo.com"
+                                },
+                                "senha": {
+                                    "type": "string",
+                                    "example": "123456"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "201": {
+                    "description": "Criado"
+                }
+            }
+        }
+        },
+        "/api/usuarios/{id}": {
+            "get": {
+                "summary": "Buscar usuário por id",
+                "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                    "type": "integer"
+                    }
+                }
+                ],
+                "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "404": {
+                    "description": "Não encontrado"
+                }
+                }
+            },
+            "put": {
+                "summary": "Atualizar usuário",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "nome": {
+                                    "type": "string",
+                                    "example": "Novo nome"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "example": "novo@demo.com"
+                                },
+                                "senha": {
+                                    "type": "string",
+                                    "example": "123456"
+                                }
+                            }
+                        }
+                    }
+                }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Não encontrado"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Excluir usuário",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                        "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Não encontrado"
+                    }
+                }
+            }
+        }
+    }
+}
